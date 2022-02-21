@@ -15,6 +15,9 @@ import 'package:harmonoid/state/visuals.dart';
 import 'package:harmonoid/constants/language.dart';
 
 class ThemeSetting extends StatelessWidget {
+  void setThemeMode(BuildContext context, Visuals visuals, dynamic themeMode) =>
+      visuals.update(themeMode: themeMode, context: context);
+
   @override
   Widget build(BuildContext context) {
     return SettingsTile(
@@ -31,10 +34,8 @@ class ThemeSetting extends StatelessWidget {
                     style: Theme.of(context).textTheme.headline4,
                   ),
                   groupValue: visuals.themeMode,
-                  onChanged: (dynamic themeMode) => visuals.update(
-                    themeMode: themeMode,
-                    context: context,
-                  ),
+                  onChanged: (dynamic themeMode) =>
+                      setThemeMode(context, visuals, themeMode),
                 ),
               RadioListTile(
                 value: ThemeMode.light,
@@ -43,23 +44,18 @@ class ThemeSetting extends StatelessWidget {
                   style: Theme.of(context).textTheme.headline4,
                 ),
                 groupValue: visuals.themeMode,
-                onChanged: (dynamic themeMode) => visuals.update(
-                  themeMode: themeMode,
-                  context: context,
-                ),
+                onChanged: (dynamic themeMode) =>
+                    setThemeMode(context, visuals, themeMode),
               ),
               RadioListTile(
-                value: ThemeMode.dark,
-                title: Text(
-                  Language.instance.THEME_MODE_DARK,
-                  style: Theme.of(context).textTheme.headline4,
-                ),
-                groupValue: visuals.themeMode,
-                onChanged: (dynamic themeMode) => visuals.update(
-                  themeMode: themeMode,
-                  context: context,
-                ),
-              ),
+                  value: ThemeMode.dark,
+                  title: Text(
+                    Language.instance.THEME_MODE_DARK,
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
+                  groupValue: visuals.themeMode,
+                  onChanged: (dynamic themeMode) =>
+                      setThemeMode(context, visuals, themeMode)),
             ],
           ),
         ));
