@@ -316,8 +316,10 @@ class DesktopAppBar extends StatelessWidget {
               alignment: Alignment.topLeft,
               padding: EdgeInsets.only(bottom: 8.0),
               child: Material(
-                elevation: elevation ?? 4.0,
-                color: color ?? Theme.of(context).appBarTheme.backgroundColor,
+                elevation: Platform.isWindows ? 0 : elevation ?? 4.0,
+                color: Platform.isWindows
+                    ? Colors.transparent
+                    : color ?? Theme.of(context).appBarTheme.backgroundColor,
                 child: Container(
                   height: double.infinity,
                   alignment: Alignment.topLeft,
@@ -727,7 +729,9 @@ class DesktopTitleBar extends StatelessWidget {
         ? Container(
             width: MediaQuery.of(context).size.width,
             height: desktopTitleBarHeight,
-            color: color ?? Theme.of(context).appBarTheme.backgroundColor,
+            color: Platform.isWindows
+                ? null
+                : color ?? Theme.of(context).appBarTheme.backgroundColor,
             child: Row(
               children: [
                 Expanded(

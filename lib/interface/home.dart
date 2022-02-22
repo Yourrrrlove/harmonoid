@@ -6,9 +6,12 @@
 /// Use of this source code is governed by the End-User License Agreement for Harmonoid that can be found in the EULA.txt file.
 ///
 
+import 'dart:io';
+
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_acrylic/flutter_acrylic.dart';
 import 'package:harmonoid/state/now_playing_launcher.dart';
 import 'package:provider/provider.dart';
 
@@ -115,10 +118,29 @@ class HomeState extends State<Home>
     return true;
   }
 
+  Color? _lastAppBarBgColor;
+  void setWindowEffect(BuildContext context) {
+    var appBarBgColor = Theme.of(context).appBarTheme.backgroundColor;
+    if (appBarBgColor != null &&
+        _lastAppBarBgColor != appBarBgColor &&
+        (appBarBgColor == Color(0xFF272727) ||
+            appBarBgColor == Color(0xffffffff))) {
+      Window.setEffect(
+        effect: WindowEffect.acrylic,
+        color: _lastAppBarBgColor = appBarBgColor,
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    if (Platform.isWindows) {
+      setWindowEffect(context);
+    }
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
+      backgroundColor: Platform.isWindows ? Colors.transparent : null,
       body: MultiProvider(
         providers: [
           ChangeNotifierProvider(
@@ -158,6 +180,8 @@ class HomeState extends State<Home>
                     child: Consumer<Language>(
                       builder: (context, _, __) => Scaffold(
                         resizeToAvoidBottomInset: false,
+                        backgroundColor:
+                            Platform.isWindows ? Colors.transparent : null,
                         body: HeroControllerScope(
                           controller:
                               MaterialApp.createMaterialHeroController(),

@@ -488,10 +488,10 @@ InputDecoration desktopInputDecoration(
     filled: true,
     fillColor: Theme.of(context).brightness == Brightness.light
         ? Colors.white
-        : Color(0xFF202020),
+        : Color(0xFF202020).withOpacity(Platform.isWindows ? 0.5 : 1.0),
     hoverColor: Theme.of(context).brightness == Brightness.light
         ? Colors.white
-        : Color(0xFF202020),
+        : Color(0xFF202020).withOpacity(Platform.isWindows ? 0.5 : 1.0),
     border: OutlineInputBorder(
       borderSide: BorderSide(
         color: Theme.of(context).dividerColor.withOpacity(0.32),

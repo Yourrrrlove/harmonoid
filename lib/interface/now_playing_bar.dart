@@ -6,6 +6,7 @@
 /// Use of this source code is governed by the End-User License Agreement for Harmonoid that can be found in the EULA.txt file.
 ///
 
+import 'dart:io';
 import 'dart:math';
 import 'dart:core';
 import 'package:flutter/material.dart';
@@ -61,8 +62,10 @@ class NowPlayingBarState extends State<NowPlayingBar>
               child: Container(
                 padding: EdgeInsets.only(top: 8.0),
                 child: Material(
-                  elevation: 12.0,
-                  color: Theme.of(context).appBarTheme.backgroundColor,
+                  elevation: Platform.isWindows ? 0 : 12.0,
+                  color: Platform.isWindows
+                      ? Colors.transparent
+                      : Theme.of(context).appBarTheme.backgroundColor,
                   child: Container(
                     height: 84.0,
                     child: Row(

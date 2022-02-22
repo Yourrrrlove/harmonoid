@@ -6,6 +6,7 @@
 /// Use of this source code is governed by the End-User License Agreement for Harmonoid that can be found in the EULA.txt file.
 ///
 
+import 'dart:io';
 import 'dart:math';
 import 'package:flutter/material.dart' hide Intent;
 import 'package:flutter/services.dart';
@@ -30,6 +31,8 @@ import 'package:harmonoid/interface/settings/settings.dart';
 import 'package:harmonoid/constants/language.dart';
 
 import 'package:harmonoid/youtube/youtube.dart';
+
+import '../../state/visuals.dart';
 
 class CollectionScreen extends StatefulWidget {
   /// Used only on Android.
@@ -83,9 +86,11 @@ class CollectionScreenState extends State<CollectionScreen>
   @override
   Widget build(BuildContext context) {
     super.build(context);
+
     return isDesktop
         ? Scaffold(
             resizeToAvoidBottomInset: false,
+            backgroundColor: Platform.isWindows ? Colors.transparent : null,
             floatingActionButton: index != 4 ? RefreshCollectionButton() : null,
             body: Stack(
               children: [
@@ -130,7 +135,28 @@ class CollectionScreenState extends State<CollectionScreen>
                             animation: animation,
                             secondaryAnimation: secondaryAnimation,
                             transitionType: SharedAxisTransitionType.vertical,
-                            child: child,
+                            child: Container(
+                                decoration: BoxDecoration(
+                                  color: Platform.isWindows
+                                      ? Theme.of(context)
+                                          .scaffoldBackgroundColor
+                                      : null,
+                                  border: Platform.isWindows
+                                      ? Border(
+                                          top: BorderSide(
+                                              width: 1,
+                                              color: Theme.of(context)
+                                                  .dividerColor
+                                                  .withOpacity(0.13)),
+                                          bottom: BorderSide(
+                                              width: 1,
+                                              color: Theme.of(context)
+                                                  .dividerColor
+                                                  .withOpacity(0.13)),
+                                        )
+                                      : null,
+                                ),
+                                child: child),
                             fillColor: Colors.transparent,
                           ),
                         ),
@@ -206,8 +232,10 @@ class CollectionScreenState extends State<CollectionScreen>
                         height: kDesktopAppBarHeight + 8.0,
                         padding: EdgeInsets.only(bottom: 8.0),
                         child: Material(
-                          elevation: 4.0,
-                          color: Theme.of(context).appBarTheme.backgroundColor,
+                          elevation: Platform.isWindows ? 0.0 : 4.0,
+                          color: Platform.isWindows
+                              ? Colors.transparent
+                              : Theme.of(context).appBarTheme.backgroundColor,
                           child: Stack(
                             alignment: Alignment.centerLeft,
                             children: [

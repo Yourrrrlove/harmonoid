@@ -6,6 +6,8 @@
 /// Use of this source code is governed by the End-User License Agreement for Harmonoid that can be found in the EULA.txt file.
 ///
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:harmonoid/constants/language.dart';
 
@@ -23,12 +25,30 @@ class Settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Platform.isWindows ? Colors.transparent : null,
       body: Stack(
         children: [
           DesktopAppBar(
             title: Language.instance.SETTING,
           ),
           Container(
+            decoration: BoxDecoration(
+              color: Platform.isWindows
+                  ? Theme.of(context).scaffoldBackgroundColor
+                  : null,
+              border: Platform.isWindows
+                  ? Border(
+                      top: BorderSide(
+                          width: 1,
+                          color:
+                              Theme.of(context).dividerColor.withOpacity(0.13)),
+                      bottom: BorderSide(
+                          width: 1,
+                          color:
+                              Theme.of(context).dividerColor.withOpacity(0.13)),
+                    )
+                  : null,
+            ),
             margin: EdgeInsets.only(
               top: desktopTitleBarHeight + kDesktopAppBarHeight,
             ),
