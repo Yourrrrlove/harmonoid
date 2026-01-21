@@ -4,20 +4,20 @@
 
 **🎵 Plays & manages your music library. Looks beautiful & juicy.**
 
-[Website](https://harmonoid.com) • [Download](https://harmonoid.com/downloads) • [Discord](https://discord.gg/2Rc3edFWd8) • Available for macOS, Windows, GNU/Linux & Android!
+[Website](https://harmonoid.com) • [Download](https://harmonoid.com/downloads) • [Discord](https://discord.gg/2Rc3edFWd8) • Available for Windows, GNU/Linux, macOS & Android!
 
-![](https://github.com/harmonoid/harmonoid/blob/assets/macos/light/0.webp?raw=true)
-![](https://github.com/harmonoid/harmonoid/blob/assets/macos/light/5.webp?raw=true)
-![](https://github.com/harmonoid/harmonoid/blob/assets/macos/light/4.webp?raw=true)
-![](https://github.com/harmonoid/harmonoid/blob/assets/macos/light/1.webp?raw=true)
-![](https://github.com/harmonoid/harmonoid/blob/assets/macos/light/2.webp?raw=true)
-![](https://github.com/harmonoid/harmonoid/blob/assets/macos/light/3.webp?raw=true)
-![](https://github.com/harmonoid/harmonoid/blob/assets/macos/dark/0.webp?raw=true)
-![](https://github.com/harmonoid/harmonoid/blob/assets/macos/dark/5.webp?raw=true)
-![](https://github.com/harmonoid/harmonoid/blob/assets/macos/dark/4.webp?raw=true)
-![](https://github.com/harmonoid/harmonoid/blob/assets/macos/dark/1.webp?raw=true)
-![](https://github.com/harmonoid/harmonoid/blob/assets/macos/dark/2.webp?raw=true)
-![](https://github.com/harmonoid/harmonoid/blob/assets/macos/dark/3.webp?raw=true)
+![](https://github.com/harmonoid/harmonoid/blob/assets/macos/light-2/0.webp?raw=true)
+![](https://github.com/harmonoid/harmonoid/blob/assets/macos/light-2/1.webp?raw=true)
+![](https://github.com/harmonoid/harmonoid/blob/assets/macos/light-2/2.webp?raw=true)
+![](https://github.com/harmonoid/harmonoid/blob/assets/macos/light-2/3.webp?raw=true)
+![](https://github.com/harmonoid/harmonoid/blob/assets/macos/light-2/4.webp?raw=true)
+![](https://github.com/harmonoid/harmonoid/blob/assets/macos/light-2/7.webp?raw=true)
+![](https://github.com/harmonoid/harmonoid/blob/assets/macos/dark-2/0.webp?raw=true)
+![](https://github.com/harmonoid/harmonoid/blob/assets/macos/dark-2/1.webp?raw=true)
+![](https://github.com/harmonoid/harmonoid/blob/assets/macos/dark-2/2.webp?raw=true)
+![](https://github.com/harmonoid/harmonoid/blob/assets/macos/dark-2/3.webp?raw=true)
+![](https://github.com/harmonoid/harmonoid/blob/assets/macos/dark-2/4.webp?raw=true)
+![](https://github.com/harmonoid/harmonoid/blob/assets/macos/dark-2/7.webp?raw=true)
 
 <table>
   <tr>
@@ -55,36 +55,36 @@
 - Performant media library & tag reader.
 - Material Design 3 & 2.
 - Light & dark themes.
+- Lyrics (LRC, tags & online).
+- Artist images.
+- Playlists.
 - Gapless playback.
 - Speed adjustment.
 - Pitch adjustment.
 - Volume boost.
-- Portable.
+- Crossfade.
+- ReplayGain.
+- Exclusive audio.
+- Tag editor.
+- Last.fm integration.
 - Discord RPC integration.
 - mpv backend.
-- Lyrics (LRC, tags & online).
-- Playlists.
 - Multiple artist & genre support.
 - Fallback cover support. e.g. cover.jpg, Folder.jpg etc.
 - Small installer (≈ 35 MB) & low RAM usage (≈ 150 MB).
 - Excellent backward compatibility. Android 5.0 or higher. macOS 10.15 or higher. Windows 10 or higher.
-- Cross-platform (macOS, Windows, GNU/Linux & Android).
-- Notification.MediaStyle for Android.
+- Portable.
+- Cross-platform (Windows, GNU/Linux, macOS & Android).
+- System Media Transport Controls & Taskbar Thumbnail Toolbar for Windows.
 - D-Bus MPRIS controls for GNU/Linux.
 - MPNowPlayingInfoCenter for macOS.
-- System Media Transport Controls & Taskbar Thumbnail Toolbar for Windows.
+- Notification.MediaStyle for Android.
 
 ## Why
 
 It's really hard to find software with good design & animations on desktop. It's almost like desktop app developers don't have faith in adding animations to their UI. Other music players, which look kind-of good don't work properly, refuse to support an audio format, read tags incorrectly, don't have my favorite feature or simply use electron.js.
 
 Harmonoid very strictly implements Material Design to be a consistent, cohesive & modern music player for all platforms. There are no inconsistent paddings, spacings or weird alignments to make me feel uncomfortable. It's built with care & proper time is given to everything.
-
-## Support
-
-- [GitHub Sponsors](https://github.com/sponsors/alexmercerind)
-- [Patreon](https://patreon.com/harmonoid)
-- [PayPal](https://paypal.me/alexmercerind)
 
 ## Localizations
 
